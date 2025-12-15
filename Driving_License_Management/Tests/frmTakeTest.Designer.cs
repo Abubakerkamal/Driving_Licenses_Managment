@@ -99,15 +99,17 @@
             // 
             // ucScheduled1
             // 
-            this.ucScheduled1.Location = new System.Drawing.Point(36, -34);
+            this.ucScheduled1.Location = new System.Drawing.Point(25, -12);
             this.ucScheduled1.Name = "ucScheduled1";
-            this.ucScheduled1.Size = new System.Drawing.Size(434, 551);
+            this.ucScheduled1.Size = new System.Drawing.Size(434, 526);
             this.ucScheduled1.TabIndex = 13;
+            this.ucScheduled1.TestType = BusinessLayer.clsTestType.enTestType.Vision;
             // 
-            // frmTakeTest1
+            // frmTakeTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(494, 690);
             this.Controls.Add(this.ucScheduled1);
             this.Controls.Add(this.btnSave);
@@ -116,8 +118,10 @@
             this.Controls.Add(this.rbPass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmTakeTest1";
-            this.Text = "frmTakeTest1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmTakeTest";
+            this.ShowIcon = false;
+            this.Text = "Take Test";
             this.Load += new System.EventHandler(this.frmTakeTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,5 +137,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Controls.ucScheduled ucScheduled1;
+        // private Controls.ucScheduled ucScheduled1;
     }
 }

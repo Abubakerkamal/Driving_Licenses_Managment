@@ -204,7 +204,7 @@
             this.lblUserMessage.Name = "lblUserMessage";
             this.lblUserMessage.Size = new System.Drawing.Size(524, 25);
             this.lblUserMessage.TabIndex = 188;
-           // this.lblUserMessage.Text = "Cannot Sechule, Vision Test Should be Passed First.";
+            this.lblUserMessage.Text = "Cannot Sechule, Vision Test Should be Passed First.";
             this.lblUserMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDrivingClass
@@ -368,7 +368,7 @@
             // 
             // pictureBox9
             // 
-           // this.pictureBox9.Image = global::Driving_License_Management.Properties.Resources.money_32;
+            this.pictureBox9.Image = global::Driving_License_Management.Properties.Resources.money_32;
             this.pictureBox9.Location = new System.Drawing.Point(386, 42);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox9.Name = "pictureBox9";
@@ -379,7 +379,7 @@
             // 
             // pictureBox6
             // 
-          //  this.pictureBox6.Image = global::Driving_License_Management.Properties.Resources.money_32;
+            this.pictureBox6.Image = global::Driving_License_Management.Properties.Resources.money_32;
             this.pictureBox6.Location = new System.Drawing.Point(159, 40);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox6.Name = "pictureBox6";
@@ -390,7 +390,7 @@
             // 
             // pictureBox5
             // 
-          //  this.pictureBox5.Image = global::Driving_License_Management.Properties.Resources.Number_32;
+            this.pictureBox5.Image = global::Driving_License_Management.Properties.Resources.Number_32;
             this.pictureBox5.Location = new System.Drawing.Point(159, 76);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 26);
@@ -401,7 +401,7 @@
             // pbTestTypeImage
             // 
             this.pbTestTypeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-          //  this.pbTestTypeImage.Image = global::Driving_License_Management.Properties.Resources.Vision_512;
+            this.pbTestTypeImage.Image = global::Driving_License_Management.Properties.Resources.Vision_512;
             this.pbTestTypeImage.InitialImage = null;
             this.pbTestTypeImage.Location = new System.Drawing.Point(166, 32);
             this.pbTestTypeImage.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -413,7 +413,7 @@
             // 
             // pictureBox7
             // 
-           // this.pictureBox7.Image = global::Driving_License_Management.Properties.Resources.License_Type_32;
+            this.pictureBox7.Image = global::Driving_License_Management.Properties.Resources.License_Type_32;
             this.pictureBox7.Location = new System.Drawing.Point(166, 346);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 26);
@@ -423,7 +423,7 @@
             // 
             // pictureBox4
             // 
-           // this.pictureBox4.Image = global::Driving_License_Management.Properties.Resources.Number_32;
+             this.pictureBox4.Image = global::Driving_License_Management.Properties.Resources.Number_32;
             this.pictureBox4.Location = new System.Drawing.Point(166, 310);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 26);
@@ -433,7 +433,7 @@
             // 
             // pictureBox2
             // 
-           // this.pictureBox2.Image = global::Driving_License_Management.Properties.Resources.Person_32;
+            this.pictureBox2.Image = global::Driving_License_Management.Properties.Resources.Person_32;
             this.pictureBox2.Location = new System.Drawing.Point(166, 382);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
@@ -444,7 +444,7 @@
             // 
             // pictureBox1
             // 
-           // this.pictureBox1.Image = global::Driving_License_Management.Properties.Resources.Count_32;
+            this.pictureBox1.Image = global::Driving_License_Management.Properties.Resources.Count_32;
             this.pictureBox1.Location = new System.Drawing.Point(166, 418);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -455,7 +455,7 @@
             // 
             // pictureBox3
             // 
-          //  this.pictureBox3.Image = global::Driving_License_Management.Properties.Resources.money_32;
+          this.pictureBox3.Image = global::Driving_License_Management.Properties.Resources.money_32;
             this.pictureBox3.Location = new System.Drawing.Point(166, 490);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
@@ -466,7 +466,7 @@
             // 
             // pictureBox8
             // 
-           // this.pictureBox8.Image = global::Driving_License_Management.Properties.Resources.Calendar_32;
+            this.pictureBox8.Image = global::Driving_License_Management.Properties.Resources.Calendar_32;
             this.pictureBox8.Location = new System.Drawing.Point(166, 454);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox8.Name = "pictureBox8";

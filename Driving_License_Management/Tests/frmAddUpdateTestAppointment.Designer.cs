@@ -50,17 +50,20 @@
             this.ucSchedule1.Location = new System.Drawing.Point(0, 3);
             this.ucSchedule1.Name = "ucSchedule1";
             this.ucSchedule1.Size = new System.Drawing.Size(552, 718);
-            this.ucSchedule1.TabIndex = 0;
+            this.ucSchedule1.TabIndex = 138;
+            this.ucSchedule1.TestType = BusinessLayer.clsTestType.enTestType.Vision;
             // 
-            // frmAddTestAppointment
+            // frmAddUpdateTestAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(552, 768);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ucSchedule1);
-            this.Name = "frmAddTestAppointment";
+            this.Controls.Add(this.btnClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.Name = "frmAddUpdateTestAppointment";
             this.Text = "Add Appointment";
             this.Load += new System.EventHandler(this.frmAddTestAppointment_Load);
             this.ResumeLayout(false);
@@ -69,7 +72,8 @@
 
         #endregion
 
-        private Controls.ucSchedule ucSchedule1;
+       // private Controls.ucSchedule ucSchedule1;
         private System.Windows.Forms.Button btnClose;
+        private Controls.ucSchedule ucSchedule1;
     }
 }
