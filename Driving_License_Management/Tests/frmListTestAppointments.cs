@@ -45,7 +45,7 @@ namespace Driving_License_Management.Tests
                     break;
                 case clsTestType.enTestType.Written:
                     lblTitle.Text = "Written Test";
-                    pbTestTypeImage.ImageLocation = clsGlobal.IconsDirectoryPath + "Written 512.png";
+                    pbTestTypeImage.ImageLocation = clsGlobal.IconsDirectoryPath + "Written Test 512.png";
                     break;
                 case clsTestType.enTestType.Street:
                     lblTitle.Text = "Street Test";

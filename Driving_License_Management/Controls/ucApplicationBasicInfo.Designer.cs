@@ -128,7 +128,6 @@
             // 
             // pictureBox8
             // 
-//            this.pictureBox8.Image = global::Driving_License_Management.Properties.Resources.Calendar_32;
             this.pictureBox8.Location = new System.Drawing.Point(718, 106);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox8.Name = "pictureBox8";
@@ -150,7 +149,6 @@
             // 
             // pictureBox7
             // 
-//            this.pictureBox7.Image = global::Driving_License_Management.Properties.Resources.ApplicationType;
             this.pictureBox7.Location = new System.Drawing.Point(164, 203);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox7.Name = "pictureBox7";
@@ -183,7 +181,6 @@
             // 
             // pictureBox6
             // 
-//            this.pictureBox6.Image = global::Driving_License_Management.Properties.Resources.Person_32;
             this.pictureBox6.Location = new System.Drawing.Point(164, 254);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox6.Name = "pictureBox6";
@@ -207,16 +204,15 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(38, 254);
+            this.label8.Location = new System.Drawing.Point(13, 254);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 25);
+            this.label8.Size = new System.Drawing.Size(130, 25);
             this.label8.TabIndex = 178;
-            this.label8.Text = "Applicant:";
+            this.label8.Text = "ApplicantID:";
             // 
             // pictureBox5
             // 
-//            this.pictureBox5.Image = global::Driving_License_Management.Properties.Resources.Number_32;
             this.pictureBox5.Location = new System.Drawing.Point(164, 106);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox5.Name = "pictureBox5";
@@ -249,7 +245,6 @@
             // 
             // pictureBox2
             // 
-//            this.pictureBox2.Image = global::Driving_License_Management.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(164, 57);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
@@ -260,7 +255,6 @@
             // 
             // pictureBox1
             // 
-//            this.pictureBox1.Image = global::Driving_License_Management.Properties.Resources.User_32__2;
             this.pictureBox1.Location = new System.Drawing.Point(718, 155);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
@@ -315,7 +309,6 @@
             // 
             // pictureBox3
             // 
-//            this.pictureBox3.Image = global::Driving_License_Management.Properties.Resources.money_32;
             this.pictureBox3.Location = new System.Drawing.Point(164, 155);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
@@ -337,7 +330,6 @@
             // 
             // pictureBox4
             // 
-//            this.pictureBox4.Image = global::Driving_License_Management.Properties.Resources.Calendar_32;
             this.pictureBox4.Location = new System.Drawing.Point(718, 48);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox4.Name = "pictureBox4";

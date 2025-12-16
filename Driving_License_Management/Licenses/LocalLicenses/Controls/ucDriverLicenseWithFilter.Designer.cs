@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDriverLicenseWithFilter));
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.txtLicenseID = new System.Windows.Forms.TextBox();
@@ -53,14 +54,14 @@
             // btnFind
             // 
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
             this.btnFind.Location = new System.Drawing.Point(872, 22);
             this.btnFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(66, 57);
             this.btnFind.TabIndex = 18;
             this.btnFind.UseVisualStyleBackColor = true;
-            btnFind.Click += new System.EventHandler(this.btnFind_Click);
-
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtLicenseID
             // 
@@ -85,12 +86,12 @@
             // 
             // ucLocalDriver_sLicense1
             // 
-            this.ucLocalDriver_sLicense1.Location = new System.Drawing.Point(17, 125);
+            this.ucLocalDriver_sLicense1.Location = new System.Drawing.Point(24, 125);
             this.ucLocalDriver_sLicense1.Name = "ucLocalDriver_sLicense1";
             this.ucLocalDriver_sLicense1.Size = new System.Drawing.Size(974, 299);
             this.ucLocalDriver_sLicense1.TabIndex = 19;
             // 
-            // 
+            // ucDriverLicenseWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,5 +112,6 @@
         private System.Windows.Forms.TextBox txtLicenseID;
         private System.Windows.Forms.Label label1;
         private ucLocalDriver_sLicense ucLocalDriver_sLicense1;
+        //    private ucLocalDriver_sLicense ucLocalDriver_sLicense1;
     }
 }

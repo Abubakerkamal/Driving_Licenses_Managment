@@ -38,7 +38,7 @@ namespace Driving_License_Management.Licenses.DatinedLicenses
         private void ucDriverLicenseWithFilter1_OnLicenseSelected(int obj)
         {
             int LicenseID = obj;
-
+            _LicenseID = LicenseID;
             lblLicenseID.Text = LicenseID.ToString();
             llShowLicenseHistory.Enabled = (LicenseID != -1);
 

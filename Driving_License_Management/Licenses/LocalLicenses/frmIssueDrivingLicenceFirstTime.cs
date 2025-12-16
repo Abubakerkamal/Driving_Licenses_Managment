@@ -28,7 +28,7 @@ namespace Driving_License_Management.Licenses.LocalLicenses
 
         }
 
-        private void LoadData()
+        private void _LoadData()
         {
             _LDLApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplication);
 
@@ -48,6 +48,7 @@ namespace Driving_License_Management.Licenses.LocalLicenses
             }
 
             int LicencseID = _LDLApplication.GetActiveLicenseID();  
+
             if (LicencseID > -1)
             {
                 MessageBox.Show("This person already has a license", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -62,16 +63,17 @@ namespace Driving_License_Management.Licenses.LocalLicenses
         }
         private void frmIssueDrivingLicenceFirstTime_Load(object sender, EventArgs e)
         {
-            LoadData();
+            _LoadData();
         }
 
         private void btnIssueLicense_Click(object sender, EventArgs e)
         {
+
             int LicenseID = _LDLApplication.IssueLicenseForFirstTime(txtNotes.Text, clsGlobal.CurrentUser.UserID);
 
             if (LicenseID > -1) {
-                MessageBox.Show("The License Was Successfully Issued", "Complated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                MessageBox.Show("The License Was Successfully Issued", "Complated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             MessageBox.Show("An error occurred", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

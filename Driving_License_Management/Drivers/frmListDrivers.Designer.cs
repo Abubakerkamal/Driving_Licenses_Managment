@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListDrivers));
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -157,7 +158,7 @@
             this.toolStripSeparator1,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsDrivers.Name = "contextMenuStrip1";
-            this.cmsDrivers.Size = new System.Drawing.Size(310, 145);
+            this.cmsDrivers.Size = new System.Drawing.Size(310, 112);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -195,6 +196,7 @@
             // pbDriverImage
             // 
             this.pbDriverImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbDriverImage.Image = ((System.Drawing.Image)(resources.GetObject("pbDriverImage.Image")));
             this.pbDriverImage.InitialImage = null;
             this.pbDriverImage.Location = new System.Drawing.Point(458, 2);
             this.pbDriverImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
