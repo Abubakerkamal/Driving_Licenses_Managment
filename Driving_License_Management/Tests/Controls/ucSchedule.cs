@@ -74,6 +74,7 @@ namespace Driving_License_Management.Controls
             _LDLApplicationID = LocalDrivingLicenseApplicationID;
             _TestAppointmentID = TestAppointmentID;
 
+            // If no TestAppointmentID that means the mode is Addnew otherwise it's Update 
             if (_TestAppointmentID == -1)
             {
                 _Mode = enMode.AddNew;
@@ -83,6 +84,7 @@ namespace Driving_License_Management.Controls
             }
 
             LDLApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDLApplicationID);
+
             if (LDLApplication == null)
             {
 
@@ -91,6 +93,8 @@ namespace Driving_License_Management.Controls
                 return;
             }
 
+            // If this person has previously registred for this test  Creation mode will be Retake Test
+            // Otherwise it will be First Time
 
             if (LDLApplication.DoseAttendTestType(_TestType))
             {
@@ -115,8 +119,10 @@ namespace Driving_License_Management.Controls
 
             lblLocalDrivingLicenseAppID.Text = _LDLApplicationID.ToString();
             lblDrivingClass.Text = LDLApplication.LicenseClassInfo.ClassName;
-            lblFullName.Text = LDLApplication.FullName;
+            string PersonName = LDLApplication.PersonInfo.FirstName + " " + LDLApplication.PersonInfo.SecondName;
+            lblFullName.Text = PersonName;
 
+            //this will show the trials for this test before  
             lblTrial.Text = clsTestAppointment.TotalTrialPerTest(_LDLApplicationID, TestType).ToString();
             
             if(_Mode == enMode.AddNew)
@@ -164,6 +170,7 @@ namespace Driving_License_Management.Controls
 
             lblFees.Text = _TestAppointment.PaidFees.ToString();
 
+            // if specified date has passed
             if(DateTime.Compare(DateTime.Today, _TestAppointment.AppointmentDate) > 0)
             {
                 dtpTestDate.Value = DateTime.Today;
@@ -189,7 +196,7 @@ namespace Driving_License_Management.Controls
         {
             if(_Mode == enMode.AddNew && clsLocalDrivingLicenseApplication.IsThereAnActiveTestApointments(_LDLApplicationID, TestType))
             {
-                lblUserMessage.Text = "Person Already have an active appointment for this test";
+                lblUserMessage.Text = "Person Already have an active appointment";
                 btnSave.Enabled = false;
                 dtpTestDate.Enabled = false;
                 return false;
@@ -214,15 +221,22 @@ namespace Driving_License_Management.Controls
 
         private bool _HandlePreviousTestConstraint()
         {
+            // Check if the pervious test was passed
+            // You can not schedule an appointment for the current test if you have not passed the pervious test
 
             switch (_TestType)
             {
+                    
                 case clsTestType.enTestType.Vision:
+                    // There is no previous test
                     lblUserMessage.Visible = false;
                     return true;
+
                 case clsTestType.enTestType.Written:
+
                     if (clsLocalDrivingLicenseApplication.DoesPassTestType(_LDLApplicationID, clsTestType.enTestType.Vision))
                     {
+                        // If vision test was passed 
                         lblUserMessage.Visible = false;
                         btnSave.Enabled = true;
                         dtpTestDate.Enabled = true;
@@ -233,9 +247,11 @@ namespace Driving_License_Management.Controls
                     btnSave.Enabled = false;
                     dtpTestDate.Enabled = false;
                     return false;
+
                 case clsTestType.enTestType.Street:
                     if (clsLocalDrivingLicenseApplication.DoesPassTestType(_LDLApplicationID, clsTestType.enTestType.Written))
                     {
+                        // If written tes was passed 
                         lblUserMessage.Visible = false;
                         btnSave.Enabled = true;
                         dtpTestDate.Enabled = true;
@@ -246,19 +262,13 @@ namespace Driving_License_Management.Controls
                     btnSave.Enabled = false;
                     dtpTestDate.Enabled = false;
                     return false;
+
                 default:
                     return false;
+
             }
-            if (_Mode == enMode.Update && _TestAppointment.IsLocked)
-            {
-                lblUserMessage.Visible = true;
-                lblUserMessage.Text = "Person already sat for the test, appointment loacked.";
-                dtpTestDate.Enabled = false;
-                btnSave.Enabled = false;
-                return false;
-            }
-            else lblUserMessage.Visible = false;
-            return true;
+
+            
         }
 
         private bool _HandleRetakeTestApplication()
