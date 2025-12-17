@@ -14,7 +14,9 @@ namespace Driving_License_Management.Licenses.LocalLicenses.Controls
     public partial class ucDriverLicenseWithFilter : UserControl
     {
 
+        // Define a custom event with parameter
         public event Action<int> OnLicenseSelected;
+
 
         protected virtual void LicenseSelected(int LicenseID)
         {
@@ -57,6 +59,7 @@ namespace Driving_License_Management.Licenses.LocalLicenses.Controls
 
             if(OnLicenseSelected != null && FilterEnabeld && ucLocalDriver_sLicense1.SelectedLicense != null)
             {
+                // Rise the event with parameter
                 OnLicenseSelected(LicenseID);
             }
 
@@ -83,7 +86,10 @@ namespace Driving_License_Management.Licenses.LocalLicenses.Controls
         private void txtLicenseID_KeyPress(object sender, KeyPressEventArgs e){
         
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            if(e.KeyChar == 13)
+
+            // Check if the pressed key is Enter (character code 13)
+
+            if (e.KeyChar == 13)
             {
                 btnFind.PerformClick();
             }
@@ -91,4 +97,6 @@ namespace Driving_License_Management.Licenses.LocalLicenses.Controls
         }
 
     }
-}
+
+   
+    }

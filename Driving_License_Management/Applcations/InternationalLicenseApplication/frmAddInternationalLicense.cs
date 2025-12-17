@@ -62,12 +62,7 @@ namespace Driving_License_Management.Applcations.InternationalLicenseApplication
                 return;
             }
 
-            // Ordinary Class ID = 3
-            //if (!clsLicense.IsLicenceExistByPersonID(LocalLicense.DriverInfo.PersonID, 3))
-            //{
-            //    MessageBox.Show("This Person Dose not Have an Ordinary License,To Issue International License You must Have an Ordinary License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+         
 
             // Ordinary Class ID = 3
             if (LocalLicense.LicenseClassID  != 3)
@@ -77,11 +72,6 @@ namespace Driving_License_Management.Applcations.InternationalLicenseApplication
             }
             int ActiveInternationalLicenseID = clsInternationalLicense.GetActiveLicenseIDByDriverID(LocalLicense.DriverID);
 
-            //if (clsInternationalLicense.IsLicenceExistAndActiveByDriverID(LocalLicense.DriverID))
-            //{
-            //    MessageBox.Show("This Driver Already Have An Active International License " , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
 
             if (ActiveInternationalLicenseID != -1)
             {
@@ -125,7 +115,7 @@ namespace Driving_License_Management.Applcations.InternationalLicenseApplication
         {
             clsInternationalLicense NewIntaernationalLicense = new clsInternationalLicense();
 
-            // fill NewIntaernationalLicense Info
+            // Fill NewIntaernationalLicense Info
             NewIntaernationalLicense.IssuedUsingLocalLicenseID = ucDriverLicenseWithFilter1.LicenseID;
             NewIntaernationalLicense.DriverID = ucDriverLicenseWithFilter1.SelectedLicense.DriverID;
             NewIntaernationalLicense.IssueDate = DateTime.Now;
@@ -133,14 +123,14 @@ namespace Driving_License_Management.Applcations.InternationalLicenseApplication
             NewIntaernationalLicense.IsActive = true;
             NewIntaernationalLicense.LicenseCreatedByUserID = clsGlobal.CurrentUser.UserID;
 
-            // fill IntaernationalLicense application Info
+            // Fill IntaernationalLicense application Info
            NewIntaernationalLicense.ApplicantPersonID = ucDriverLicenseWithFilter1.SelectedLicense.DriverInfo.PersonID;
            NewIntaernationalLicense.ApplicationDate = DateTime.Now;
            NewIntaernationalLicense.ApplicationStatus = (int)clsApplication.enStatus.Completed;
            NewIntaernationalLicense.LastStatusDate = DateTime.Now;
            NewIntaernationalLicense.ApplicationTypeID = clsApplicationType.Find((int)clsApplication.enApplicationType.NewInternationalLicense).ApplicationTypeID;
            NewIntaernationalLicense.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.NewInternationalLicense).Fees;
-            NewIntaernationalLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+           NewIntaernationalLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
 
             if (!NewIntaernationalLicense.Save())
@@ -157,6 +147,10 @@ namespace Driving_License_Management.Applcations.InternationalLicenseApplication
             btnIssueLicense.Enabled = false;
             ucDriverLicenseWithFilter1.FilterEnabeld = false;
             llShowLicenseInfo.Enabled = true;
+
+            // Show issued license
+            frmInternationalLicenseInfo frm = new frmInternationalLicenseInfo(NewIntaernationalLicense.InternationalLicenseID);
+            frm.ShowDialog();
 
 
         }

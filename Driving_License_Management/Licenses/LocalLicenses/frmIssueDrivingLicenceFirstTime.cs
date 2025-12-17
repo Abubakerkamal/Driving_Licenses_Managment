@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Driving_License_Management.GlobalClasses;
+using Driving_License_Management.Licenses.LocalLicenses.Controls;
 
 namespace Driving_License_Management.Licenses.LocalLicenses
 {
@@ -74,6 +75,11 @@ namespace Driving_License_Management.Licenses.LocalLicenses
             if (LicenseID > -1) {
                 this.Close();
                 MessageBox.Show("The License Was Successfully Issued", "Complated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Show issued license
+                frmDriverLicenseInfo frm = new frmDriverLicenseInfo(LicenseID);
+                frm.ShowDialog();
+
                 return;
             }
             MessageBox.Show("An error occurred", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

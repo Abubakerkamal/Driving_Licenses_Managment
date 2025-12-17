@@ -48,6 +48,7 @@ namespace Driving_License_Management.Licenses.DatinedLicenses
                 btnDetain.Enabled = false;
                     return;
             }
+
             btnDetain.Enabled = true;
             llShowLicenseInfo.Enabled = true;
         }
@@ -61,7 +62,7 @@ namespace Driving_License_Management.Licenses.DatinedLicenses
                 return;
             }
 
-            if (MessageBox.Show("Are you sure you want to detained this license detained", "Conferm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Are you sure you want to detained this license", "Conferm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }
@@ -76,6 +77,7 @@ namespace Driving_License_Management.Licenses.DatinedLicenses
             }
 
             MessageBox.Show("License detained successfully with DetainedID = " + _DetainID, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lblDetainID.Text = _DetainID.ToString();
             ucDriverLicenseWithFilter1.FilterEnabeld = false;
             btnDetain.Enabled = false;
 
@@ -115,5 +117,7 @@ namespace Driving_License_Management.Licenses.DatinedLicenses
 
             errorProvider1.SetError(txtFineFees, null);
         }
+
+
     }
 }

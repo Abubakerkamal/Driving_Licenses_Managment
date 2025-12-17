@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListInternationalLicenses));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,7 +59,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(361, 161);
+            this.label3.Location = new System.Drawing.Point(359, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(550, 59);
             this.label3.TabIndex = 104;
@@ -68,6 +69,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(699, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(72, 45);
@@ -78,6 +80,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(512, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(238, 155);
@@ -98,9 +101,9 @@
             this.panel1.Controls.Add(this.txbFilter);
             this.panel1.Controls.Add(this.cmbFilterBy);
             this.panel1.Controls.Add(this.dgv);
-            this.panel1.Location = new System.Drawing.Point(2, 239);
+            this.panel1.Location = new System.Drawing.Point(3, 211);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1277, 452);
+            this.panel1.Size = new System.Drawing.Size(1276, 480);
             this.panel1.TabIndex = 167;
             // 
             // lblInternationalLicensesRecords
@@ -108,7 +111,7 @@
             this.lblInternationalLicensesRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblInternationalLicensesRecords.AutoSize = true;
             this.lblInternationalLicensesRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInternationalLicensesRecords.Location = new System.Drawing.Point(188, 458);
+            this.lblInternationalLicensesRecords.Location = new System.Drawing.Point(188, 486);
             this.lblInternationalLicensesRecords.Name = "lblInternationalLicensesRecords";
             this.lblInternationalLicensesRecords.Size = new System.Drawing.Size(34, 25);
             this.lblInternationalLicensesRecords.TabIndex = 174;
@@ -119,7 +122,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 455);
+            this.label5.Location = new System.Drawing.Point(43, 483);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 29);
             this.label5.TabIndex = 173;
@@ -134,7 +137,7 @@
             "All",
             "Yes",
             "No"});
-            this.cmbIsReleased.Location = new System.Drawing.Point(270, 24);
+            this.cmbIsReleased.Location = new System.Drawing.Point(270, 38);
             this.cmbIsReleased.Name = "cmbIsReleased";
             this.cmbIsReleased.Size = new System.Drawing.Size(121, 28);
             this.cmbIsReleased.TabIndex = 172;
@@ -150,7 +153,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClose.Location = new System.Drawing.Point(1121, 453);
+            this.btnClose.Location = new System.Drawing.Point(1120, 481);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(148, 39);
             this.btnClose.TabIndex = 171;
@@ -161,9 +164,10 @@
             // 
             this.btnAddNew.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAddNew.AutoSize = true;
-            this.btnAddNew.Location = new System.Drawing.Point(1157, 0);
+            this.btnAddNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNew.Image")));
+            this.btnAddNew.Location = new System.Drawing.Point(1158, 3);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(112, 64);
+            this.btnAddNew.Size = new System.Drawing.Size(110, 70);
             this.btnAddNew.TabIndex = 170;
             this.btnAddNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddNew.UseVisualStyleBackColor = true;
@@ -173,7 +177,7 @@
             // 
             this.txbFilter.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txbFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbFilter.Location = new System.Drawing.Point(270, 26);
+            this.txbFilter.Location = new System.Drawing.Point(270, 40);
             this.txbFilter.Name = "txbFilter";
             this.txbFilter.Size = new System.Drawing.Size(376, 26);
             this.txbFilter.TabIndex = 169;
@@ -193,7 +197,7 @@
             "Driver ID",
             "Local License ID",
             "Is Active"});
-            this.cmbFilterBy.Location = new System.Drawing.Point(25, 26);
+            this.cmbFilterBy.Location = new System.Drawing.Point(25, 40);
             this.cmbFilterBy.Name = "cmbFilterBy";
             this.cmbFilterBy.Size = new System.Drawing.Size(206, 28);
             this.cmbFilterBy.TabIndex = 168;
@@ -209,12 +213,12 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ContextMenuStrip = this.cmsApplications;
             this.dgv.GridColor = System.Drawing.SystemColors.MenuText;
-            this.dgv.Location = new System.Drawing.Point(7, 70);
+            this.dgv.Location = new System.Drawing.Point(7, 118);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersWidth = 62;
             this.dgv.RowTemplate.Height = 28;
-            this.dgv.Size = new System.Drawing.Size(1262, 377);
+            this.dgv.Size = new System.Drawing.Size(1261, 357);
             this.dgv.TabIndex = 167;
             // 
             // cmsApplications

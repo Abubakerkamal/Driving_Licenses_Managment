@@ -37,8 +37,7 @@ namespace Driving_License_Management.Applcations.ReleaseDetainedLicenses
 
         private void ucDriverLicenseWithFilter1_OnLicenseSelected(int obj)
         {
-           _LicenseID = obj;
-            DetainedLicense = clsDetainedLicense.FindByLicenseID(_LicenseID);
+            _LicenseID = obj;
             lblLicenseID.Text = _LicenseID.ToString();
             llShowLicenseHistory.Enabled = (_LicenseID != -1);
             
@@ -49,12 +48,15 @@ namespace Driving_License_Management.Applcations.ReleaseDetainedLicenses
             }
 
 
-            lblFineFees.Text = ucDriverLicenseWithFilter1.SelectedLicense.DetainedInfo.FineFess.ToString();
             lblDetainID.Text = ucDriverLicenseWithFilter1.SelectedLicense.DetainedInfo.DetainID.ToString();
             lblDetainDate.Text = ucDriverLicenseWithFilter1.SelectedLicense.DetainedInfo.DetainDate.ToString();
-            lblTotalFees.Text = ((float)ApplicationType.Fees + DetainedLicense.FineFess).ToString();
+
+            lblFineFees.Text = ucDriverLicenseWithFilter1.SelectedLicense.DetainedInfo.FineFess.ToString();
             lblApplicationFees.Text = ((float)clsApplicationType.Find((int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicsense).Fees).ToString();
+            lblTotalFees.Text = (Convert.ToSingle(lblApplicationFees.Text) + Convert.ToSingle(lblFineFees.Text)).ToString();
+
             lblCreatedByUser.Text = ucDriverLicenseWithFilter1.SelectedLicense.DetainedInfo.CreatedByUserInfo.UserName.ToString(); ;
+
             btnRelease.Enabled = true;
             llShowLicenseInfo.Enabled = true;
 
