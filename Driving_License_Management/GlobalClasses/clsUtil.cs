@@ -60,7 +60,7 @@ namespace Driving_License_Management.GlobalClasses
 
         static public bool CopeyFileToProjectFolder(ref string sourceFile) {
 
-            string FolderPath = @"C:\DVLD_People_Image\";
+            string FolderPath = @"..\..\..\Storge\PeopleImages\";
             if (CreateFoldeIfNotExist(FolderPath))
             {
                 string destinationFile = FolderPath + ReplaceFileNameWithGuid(sourceFile);
