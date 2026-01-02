@@ -151,6 +151,7 @@ namespace BusinessLayer
 
             if (Driver == null)
             {
+                Driver = new clsDriver();
                 Driver.PersonID = this.PersonInfo.PersonID;
                 Driver.CreatedTime = DateTime.Now;
                 Driver.CreatedByUserID = CreatedByUserID;
