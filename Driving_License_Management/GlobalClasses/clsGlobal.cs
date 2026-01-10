@@ -7,6 +7,7 @@ using System.IO;
 using System.Web;
 using System.Windows.Forms;
 using BusinessLayer;
+using Microsoft.Win32;
 
 namespace Driving_License_Management.GlobalClasses
 {
@@ -21,85 +22,92 @@ namespace Driving_License_Management.GlobalClasses
         {
             try
             {
-
-                // get the current project's path
-                string thisFolderPath = System.IO.Directory.GetCurrentDirectory();
-
-                // Define the path to the text file where you want save the data
-                string FilePath = thisFolderPath + "\\data";
-
-                if (Username == "" && File.Exists(FilePath))
+                // Define the path to the file where you want save the data on registry
+                string KeyPath = @"HKEY_CURRENT_USER\Software\DVLD\Permissions\Login";
+                string UsernameKey = "Username";
+                string PasswordKey = "Password";
+                try
                 {
-                    // if you dont want save data
-                    File.Delete(FilePath);
-                    return true;
+
+                    if (Username == "")
+                    {
+                        KeyPath = @"Software\DVLD\Permissions\Login";
+                        // Open the registry key in read/write mode with explicit registry view
+                        using (RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64))
+                        {
+                            using (RegistryKey key = baseKey.OpenSubKey(KeyPath, true))
+                            {
+                                if (key != null)
+                                {
+                                    // Delete the saved username and password
+
+                                    key.DeleteValue(UsernameKey);
+                                    key.DeleteValue(PasswordKey);
+                                    return true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"Registry key '{KeyPath}' not found");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                        Registry.SetValue(KeyPath, UsernameKey, Username, RegistryValueKind.String);
+                        Registry.SetValue(KeyPath, PasswordKey, Password, RegistryValueKind.String);
+                        return true;
+                    }
                 }
-
-
-                // Concatonate username and password with seperator
-                string DataToSave = Username + "//##//" + Password;
-
-                // Write the data in the file for future retrieval
-                using (StreamWriter writer = new StreamWriter(FilePath))
+                catch (UnauthorizedAccessException)
                 {
-                    writer.WriteLine(DataToSave);
-                    return true;
+                    Console.WriteLine("UnauthorizedAccessException: Run the program with administrative privileges.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An error occurred: {ex.Message}");
                 }
 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-              MessageBox.Show($"An error occurred: {ex.Message}");
                 return false;
             }
-             
+
+
+            return false;
 
 
         }
 
         static public bool GetStoredCredintial(ref string Username,ref string Password) {
 
-            // This will get the stored username and password and will return true if found and false if not found
+            // This will get the stored username and password from registry and will return true if found and false if not found
 
+            string KeyPath = @"HKEY_CURRENT_USER\Software\DVLD\Permissions\Login";
+            string UsernameKey = "Username";
+            string PasswordKey = "Password";
 
             try
             {
-                // Get the current project's directory path
-                string thisFolderPath = System.IO.Directory.GetCurrentDirectory();
+                 Username = Registry.GetValue(KeyPath, UsernameKey, null) as string;
+                 Password = Registry.GetValue(KeyPath, PasswordKey, null) as string;
 
-                // Path for the file contains the credential
-                string FilePath = thisFolderPath + "\\data";
-
-                // Check if the file exist before attempting to read it
-                if (File.Exists(FilePath))
+                if (Username != null && Password != null)
                 {
-                    // Create a StreamReader for reading from the file
-                    using (StreamReader reader = new StreamReader(FilePath))
-                    {
-                        // Read data line by line until end of the file
-                        string Line;
-                        while ((Line = reader.ReadLine()) != null)
-                        {
-                            Console.WriteLine(Line);
 
-                            string[] result = Line.Split(new string[] { "//##//" }, StringSplitOptions.None);
-                            
-                                Username = result[0];
-                                Password = result[1];
-                            
-                        }
-                        return true;
-                    }
-
+                    return true;
                 }
-                return false;
             }
             catch (Exception)
             {
-                return false;
+                Console.WriteLine("An error occurred {");
             }
-        
+
+
+            return false ;
         }
     }
 }
